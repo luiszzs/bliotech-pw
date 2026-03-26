@@ -1,80 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
-    <title>Coisa de Biblioteca</title>
+    <title>Bibliotech</title>
 </head>
-<body>
-        
-        <div class="barraLateral">
-            <h2>barra</h2>
-            <div class="lista">
-                <ul>
 
-                </ul>
-            </div>
-        </div>
+<body>
+    <div class="container">
         <div class="logo">
             <h1>logo</h1>
         </div>
         <div class="main">
-        <!--Mudar o nome dessa variavel depois-->
-        <div class="infos">
-            <form>
-            <label>Nome</label>
-            <input type="text"> <br>
-            <label>Descrição</label> <br>
-            <textarea name="descricao"></textarea> <br>
-            
-            <label>Gênero</label> <br>
-            <select>
-                <option>Romance</option>
-                <option>Fantasia</option>
-                <option>Ficção Científica</option>
-                <option>Suspense</option>
-                <option>Terror</option>
-                <option>Biografia</option>
-                <option>Poesia</option>
-                <option>Autoajuda</option>
-            </select>
-            </form>
-            <br>
+            <!--LEMBRA SEU ANIMAL, textField so pra texto de escrever-->
+            <!--Mudar o nome dessa variavel depois-->
+            <div class="infoLivro">
+                <h2>Info Livro</h2>
+                <form>
+                    <div class="textField">
+                        <label>Titulo</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <label>Gênero</label>
+                    <select id="genero">
+                        <option value="romance">Romance</option>
+                        <option value="fantasia">Fantasia</option>
+                        <option value="ficcaoCientifica">Ficção Científica</option>
+                        <option value="suspense">Suspense</option>
+                        <option value="terror">Terror</option>
+                        <option value="biografia">Biografia</option>
+                        <option value="poesia">Poesia</option>
+                        <option value="autoAjuda">Autoajuda</option>
+                    </select>
+                </form>
+            </div>
+            <div class="infoAluno">
+                <h2>Informação do aluno</h2>
+                    <form id="infoAluno">
+                        <div class="textField">
+                        <label>Nome do aluno</label>
+                        <input type="text" id="nomeAluno" required>
+                    </div>
+                        <label>Série</label>
+                        <select id="serie">
+                            <option value="primeiraSerie">1°</option>
+                            <option value="segundaSerie">2°</option>
+                            <option value="terceiraSerie">3°</option>
+                        </select>
+                        <label>Turma</label>
+                        <select id="turma">
+                            <option value="turmaA">A</option>
+                            <option value="turmaB">B</option>
+                            <option value="turmaC">C</option>
+                        </select>
 
-            <h2>Informação do aluno</h2>
-            <form>
-                <label>Nome do aluno</label> <br>
-                <input type="text"> <br>
-                <label>Série</label>
-                <select>
-                    <option>1°</option>
-                    <option>2°</option>
-                    <option>3°</option>
-                </select>
-                <label>Turma</label>
-                <select>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>C</option>
-                </select>
-                <br>
-                <label>Data da coleta</label>
-            <input type="datetime-local"> <br>
-            <label>Data de Prevista para a Devolução</label>
-            <input type="datetime-local"> <br>
-            <button>Enviar</button>
-            </form>
-            <hr>
+                        <label>Data da coleta</label>
+                        <input type="datetime-local" id="data">
+                        <label>Data de Prevista para a Devolução</label>
+                        <input type="datetime-local" id="dataRetorno">
+                        <button type="submit" class="enviar" id="enviar">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="listaAgendamento">
+                <h3 class="tituloLista">Lista de agendamento</h3>
+                <ul class="lista" id="lista">
+                </ul>
+            </div>
+            <button id="apagar">Apagar selecionados</button>
         </div>
-        <div class="listaAgendamento">
-            <h3>Lista de agendamento</h3>
-            <ul> 
-                <li>sla</li>
-                <li>seila</li>
-            </ul>
-        </div>
-        </div>
+    </div>
     <script src="./src/js/script.js"></script>
 </body>
+
 </html>

@@ -5,9 +5,6 @@
     box-sizing: border-box;
 }
 
-.main {
-    margin-left: 80px;
-}
 .logo {
     margin-block-end: 10px;
     padding: 20px;
@@ -20,13 +17,31 @@
     width: 100%;
 }
 
-.barraLateral {
-    border: 2px black solid;
-    position: fixed;
-    left: 0;
-    top: 100px;
+.enviar {
+    margin-top: 20px;
+    height: 30px;
     width: 80px;
-    height: calc(100vh - 100px);
-    background-color: #1e1e1e;
-    color: aliceblue;
+    font-size: 15px;
+}
+
+.listaAgendamento {
+    margin-left: -5px;
+    margin-top: 50px;
+    border: 2px solid black;
+    height: 500px;
+
+}
+
+.listaAgendamento > h3 {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.listaAgendamento > ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+[class^='itemLista'] {
+    
 }
