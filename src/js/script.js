@@ -17,6 +17,8 @@ const aluno = {
     dataDevolucao: document.getElementById("dataRetorno")
 }
 
+const turmaSel = aluno.turma.options[aluno.turma.selectedIndex].value
+
 form.addEventListener("submit", (event) => {
     event.preventDefault()
 
@@ -47,10 +49,10 @@ form.addEventListener("submit", (event) => {
     item.appendChild(check)
 
     item.innerHTML +=
-        " Livro: " + livro.nome.value +
-        " | Aluno: " + aluno.nomeAluno.value +
-        " | Retirado: " + aluno.dataColeta.value +
-        " | Devolução: " + aluno.dataDevolucao.value
+        " Livro: " + livro.nome.value + "\n"
+        "  Aluno: " + aluno.nomeAluno.value + aluno.serie.value + turmaSel + "\n"
+        "  Retirado: " + aluno.dataColeta.value + "\n"
+        "  Devolução: " + aluno.dataDevolucao.value 
 
     lista.appendChild(item)
 
