@@ -10,19 +10,17 @@
 
 <body>
     <div class="container">
-        <div class="logo">
-            <h1>logo</h1>
-        </div>
-        <div class="main">
+            <div class="card">
             <!--LEMBRA SEU ANIMAL, textField so pra texto de escrever-->
             <!--Mudar o nome dessa variavel depois-->
             <div class="infoLivro">
-                <h2>Info Livro</h2>
-                <form>
+                <h2>Informação do Livro</h2>
+                <form id="formPrincipal">
                     <div class="textField">
                         <label>Titulo</label>
                         <input type="text" id="nome" required>
                     </div>
+                    <div class="selecaoDoGenero">
                     <label>Gênero</label>
                     <select id="genero">
                         <option value="romance">Romance</option>
@@ -34,43 +32,53 @@
                         <option value="poesia">Poesia</option>
                         <option value="autoAjuda">Autoajuda</option>
                     </select>
-                </form>
+
+                </div>
             </div>
             <div class="infoAluno">
-                <h2>Informação do aluno</h2>
-                    <form id="infoAluno">
+                <h2>Informação do Aluno</h2>
+
                         <div class="textField">
                         <label>Nome do aluno</label>
                         <input type="text" id="nomeAluno" required>
                     </div>
+                    <div class="selecaoDaTurma">
+                        <div class="linha">
                         <label>Série</label>
                         <select id="serie">
                             <option value="primeiraSerie">1°</option>
                             <option value="segundaSerie">2°</option>
                             <option value="terceiraSerie">3°</option>
                         </select>
+                    
                         <label>Turma</label>
                         <select id="turma">
                             <option value="turmaA">A</option>
                             <option value="turmaB">B</option>
                             <option value="turmaC">C</option>
                         </select>
-
+                        </div>
+                        <div class="datas">
                         <label>Data da coleta</label>
-                        <input type="datetime-local" id="data">
+                        <input type="datetime" id="data">
                         <label>Data de Prevista para a Devolução</label>
-                        <input type="datetime-local" id="dataRetorno">
+                        <input type="datetime" id="dataRetorno">
                         <button type="submit" class="enviar" id="enviar">Enviar</button>
                     </form>
+                    </div>
                 </div>
             </div>
+            </div>
+            <div class="card">
             <div class="listaAgendamento">
-                <h3 class="tituloLista">Lista de agendamento</h3>
+                <h3 class="tituloLista">Lista de Agendamento</h3>
                 <ul class="lista" id="lista">
                 </ul>
             </div>
             <button id="apagar">Apagar selecionados</button>
         </div>
+        </div>
+    </div>
     </div>
     <script src="./src/js/script.js"></script>
 </body>

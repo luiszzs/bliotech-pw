@@ -1,11 +1,14 @@
-const botao = document.getElementById("enviar")
+const form = document.getElementById("formPrincipal")
 const lista = document.getElementById("lista")
+const apagar = document.getElementById("apagar")
+
 let listaCheck = []
+
 const livro = {
     nome: document.getElementById("nome"),
-    descricao: document.getElementById("descricao"),
     genero: document.getElementById("genero")
 }
+
 const aluno = {
     nomeAluno: document.getElementById("nomeAluno"),
     serie: document.getElementById("serie"),
@@ -14,46 +17,54 @@ const aluno = {
     dataDevolucao: document.getElementById("dataRetorno")
 }
 
-botao.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
     event.preventDefault()
 
-    if (livro.nome.value == "" || aluno.nomeAluno.value == "" || aluno.dataColeta.value == "" || aluno.dataDevolucao.value == "") {
+    if (
+        livro.nome.value === "" ||
+        aluno.nomeAluno.value === "" ||
+        aluno.dataColeta.value === "" ||
+        aluno.dataDevolucao.value === ""
+    ) {
         alert("Forneça todas as informações para enviar.")
         return
-    } else if (listaCheck.indexOf(aluno.nomeAluno.value) !== listaCheck.lastIndexOf(aluno.nomeAluno.value)) {
-            alert("Esse aluno já alugou um livro")
-            return
-        } else {
-        listaCheck.push(aluno.nomeAluno.value)
-        for (let i = 0; i <= listaCheck.length; i++) {
-            if (i == listaCheck.length) {
-                const item = document.createElement("li")
-                item.classList.add("itemLista" + i)
-                const check = document.createElement("input")
-
-                check.type = "checkbox"
-
-                check.classList.add("checkItem")
-
-                item.appendChild(check)
-
-                item.innerHTML += "livro " + livro.nome.value + " - agendado pelo aluno " + aluno.nomeAluno.value + "no dia" + aluno.dataColeta.value
-
-                lista.appendChild(item)
-            }
-        }
-        
     }
+
+    if (listaCheck.includes(aluno.nomeAluno.value)) {
+        alert("esse aluno ja está na lista")
+        return
+    }
+
+    listaCheck.push(aluno.nomeAluno.value)
+
+    const item = document.createElement("li")
+    item.classList.add("itemLista")
+
+    const check = document.createElement("input")
+    check.type = "checkbox"
+    check.classList.add("checkItem")
+
+    item.appendChild(check)
+
+    item.innerHTML +=
+        " Livro: " + livro.nome.value +
+        " | Aluno: " + aluno.nomeAluno.value +
+        " | Retirado: " + aluno.dataColeta.value +
+        " | Devolução: " + aluno.dataDevolucao.value
+
+    lista.appendChild(item)
+
+    form.reset()
 })
 
 apagar.addEventListener("click", () => {
-    const checkBoxes = document.querySelectorAll(".checkItem")
-    const itens = document.querySelectorAll("li")
+    const checkBoxes = lista.querySelectorAll(".checkItem")
+    const itens = lista.querySelectorAll("li")
 
-    checkBoxes.forEach((check, i) => {
-        if (check.checked) {
+    for (let i = checkBoxes.length - 1; i >= 0; i--) {
+        if (checkBoxes[i].checked) {
             itens[i].remove()
-            listaCheck.slice(i)
+            listaCheck.splice(i, 1)
         }
-    })
+    }
 })
